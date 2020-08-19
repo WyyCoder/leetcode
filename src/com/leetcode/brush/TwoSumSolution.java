@@ -1,5 +1,6 @@
 package com.leetcode.brush;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,77 +13,53 @@ import java.util.Map;
  */
 public class TwoSumSolution {
 
-    /**
-     * first method
-     *
-     * @param nums
-     * @param target
-     * @return
-     */
-    private int[] twoSumFirst(int[] nums, int target) {
-        int[] ints = {};
+    public int[] methodOne(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
+            for (int j = i +1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
-                    ints = new int[]{i, j};
-                    return ints;
+                    return new int[]{i, j};
                 }
             }
         }
-        return ints;
+        return null;
     }
 
-    /**
-     * second method
-     *
-     * @param nums
-     * @param target
-     * @return
-     */
-    private int[] twoSumSecond(int[] nums, int target) {
-        int[] ints = {};
+    public int[] methodTwo(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             map.put(nums[i], i);
         }
         for (int i = 0; i < nums.length; i++) {
-            int j = target - nums[i];
-            if (map.containsKey(j) && map.get(j) != i) {
-                return new int[]{map.get(j), i};
+            int i1 = target - nums[i];
+            Integer integer = map.get(i1);
+            if (integer != null && integer != i) {
+                return new int[]{i, integer};
             }
         }
-        return ints;
+        return null;
     }
 
-    /**
-     * third method
-     *
-     * @param nums
-     * @param target
-     * @return
-     */
-    private int[] thirdSumSecond(int[] nums, int target) {
-        int[] ints = {};
+    public int[] methodThree(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            int j = target - nums[i];
-            if (map.containsKey(j)) {
-                return new int[]{map.get(j), i};
+            int num = nums[i];
+            int i1 = target - num;
+            Integer integer = map.get(num);
+            if (map.containsKey(num) && integer != i) {
+                return new int[]{i, integer};
             }
-            map.put(nums[i], i);
+            map.put(i1, i);
         }
-        return ints;
+        return null;
     }
 
     public static void main(String[] args) {
         TwoSumSolution twoSumSolution = new TwoSumSolution();
-        int[] ints = twoSumSolution.twoSumFirst(new int[]{3, 3}, 6);
-        if (ints.length > 0) {
-            System.out.println("first index：" + ints[0]);
-            System.out.println("second index：" + ints[1]);
-        } else {
-            System.out.println("none ! ! !");
-        }
+        int ta = 6;
+        int[] s = {3,3};
+        int[] ints = twoSumSolution.methodThree(s, ta);
+        System.out.println(ints[0]);
+        System.out.println(ints[1]);
     }
 
 }
