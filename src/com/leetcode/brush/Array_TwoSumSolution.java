@@ -11,7 +11,7 @@ import java.util.Map;
  * @url https://leetcode-cn.com/problems/two-sum/
  * @date 2019/3/5 5:12 PM
  */
-public class TwoSumSolution {
+public class Array_TwoSumSolution {
 
     /**
      * 利用两个for循环，数组里的每一个元素去和它之后的元素依次相加，是否等于目标值，等于即返回
@@ -77,10 +77,10 @@ public class TwoSumSolution {
     }
 
     public static void main(String[] args) {
-        TwoSumSolution twoSumSolution = new TwoSumSolution();
+        Array_TwoSumSolution arrayTwoSumSolution = new Array_TwoSumSolution();
         int ta = 6;
         int[] s = {3,3};
-        int[] ints = twoSumSolution.methodThree(s, ta);
+        int[] ints = arrayTwoSumSolution.methodThree(s, ta);
         System.out.println(ints[0]);
         System.out.println(ints[1]);
     }

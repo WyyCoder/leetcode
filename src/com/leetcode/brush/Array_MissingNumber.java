@@ -6,7 +6,7 @@ package com.leetcode.brush;
  * @Description: https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/
  * @date 2020/8/21 3:24 下午
  */
-public class MissingNumber {
+public class Array_MissingNumber {
     /**
      * time:0s;memory:40.2MB
      *
@@ -29,8 +29,8 @@ public class MissingNumber {
     }
 
     public static void main(String[] args) {
-        MissingNumber missingNumber = new MissingNumber();
+        Array_MissingNumber arrayMissingNumber = new Array_MissingNumber();
         int[] b = {0};
-        System.out.println(missingNumber.missingNumber(b));
+        System.out.println(arrayMissingNumber.missingNumber(b));
     }
 }
