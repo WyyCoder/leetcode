@@ -39,10 +39,34 @@ public class FindLucky {
         return a;
     }
 
+    /**
+     * 根据题解提示得到这个解法，先将给的数组元素放入一个数组，使给定的数组元素当新数组的下标。新元素的数组值为每个元素出现的次数。
+     * 如果新数组的下标等于其元素的话，就认为他是幸运数，然后将新数组根据下标倒叙循环，得到最大的下标，即返回。
+     *
+     * notice : 一定看题目给的提示信息
+     *
+     * time:1s memory:39.5MB
+     *
+     * @param arr
+     * @return
+     */
+    public int findLuckyTwo(int[] arr) {
+        int[] t = new int[500];
+        for (int a : arr) {
+            t[a]++;
+        }
+        for (int i = t.length - 1; i > 0; i--) {
+            if (i == t[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         int[] arr = {3,19,18,2,9,4,7,11,15,7,14,10,11,9,8,5,4,14,11,4,16,3,13,14,14,15,8,19,3,5,20,15,14,10,16,11,17,20,11,20,15,3,20,5,12,2,15,12,14,16,20,17,15,8,18,9,8,5,12,3,5,15,14,10,2,20,20,3,13,9,1,3,16,18,14,16,13,9,18,13,9,3,5,19};
         FindLucky findLucky = new FindLucky();
-        int lucky = findLucky.findLuckyOne(arr);
+        int lucky = findLucky.findLuckyTwo(arr);
         System.out.println(lucky);
     }
 }
