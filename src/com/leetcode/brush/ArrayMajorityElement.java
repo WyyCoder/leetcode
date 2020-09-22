@@ -5,6 +5,14 @@ import java.util.Map;
 
 public class ArrayMajorityElement {
 
+    /**
+     * time:22ms;memory:44.3 MB
+     *
+     * 将这个数组机进行循环，把每个元素对应的次数放在map里，每次和数组的长度做对比，符合条件及返回
+     *
+     * @param nums
+     * @return
+     */
     public int majorityElement(int[] nums) {
         int m = nums.length / 2;
         Map<Integer, Integer> map = new HashMap<>();
@@ -19,6 +27,12 @@ public class ArrayMajorityElement {
         return -1;
     }
 
+    /**
+     * 一个官方题解。使用的是投票算法。好像有点意思。：）
+     *
+     * @param nums
+     * @return
+     */
     public int majorityElementOne(int[] nums) {
         // 投票算法
         int temp = nums[0];
