@@ -8,7 +8,7 @@ public class ArrayMajorityElement {
     /**
      * time:22ms;memory:44.3 MB
      *
-     * 将这个数组机进行循环，把每个元素对应的次数放在map里，每次和数组的长度做对比，符合条件及返回
+     * 将这个数组机进行循环，把每个元素对应的次数放在map里，每次和数组的长度做对比，符合条件及返回。
      *
      * @param nums
      * @return
