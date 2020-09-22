@@ -28,7 +28,7 @@ public class ArrayMajorityElement {
     }
 
     /**
-     * 一个官方题解。使用的是投票算法。好像有点意思。：）
+     * 一个官方题解。使用的是投票算法。好像有点意思。可以研究下。：）
      *
      * @param nums
      * @return
